@@ -1,10 +1,10 @@
-*{
-    padding:0px;
-    margin:0px;
+* {
+    padding: 0px;
+    margin: 0px;
     overflow-x: clip;
 }
 
-header{ 
+header {
     display: flex;
     padding-inline-start: 100px;
     justify-content: space-between;
@@ -13,115 +13,516 @@ header{
     background-color: white;
     position: relative;
 }
-nav ul{
-    display:flex;
+
+nav ul {
+    display: flex;
     padding-inline-end: 100px;
-    gap:30px;
+    gap: 30px;
     list-style: none;
     text-decoration: none;
     padding-top: 10px;
 }
-header nav ul li a{
-  text-decoration: none; 
-  color: black;  
+
+header nav ul li a {
+    text-decoration: none;
+    color: black;
 }
-/* banner section starts */
-.banner{
-    width:100%;  
+header nav ul li a:hover {
+    color: rgb(56, 143, 243);
+}
+header nav i:hover {
+    color: rgb(2, 103, 255);
+}
+
+.banner {
+    width: 100%;
     height: 191px;
     object-fit: cover;
 }
-.container{
-    width:100%;
+
+.container {
+    width: 100%;
     height: 200px;
-    position:relative;
-    
+    position: relative;
+    margin-bottom: 100px;
 }
-.container h2{
+
+.container h2 {
     position: absolute;
     left: 50%;
     top: 41%;
-    color:white;
+    transform: translateX(-50%);
+    color: white;
 }
-/* products images starts */
-.container-3{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+.container-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    margin-left: 150px;
-    margin-right: 150px;
-    grid-gap:20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    grid-gap: 20px;
     padding-bottom: 20px;
-    margin-top: 100px;
-    margin-bottom: 100px; 
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border-radius: 10px;
+}
+.container-3 p{
+    font-size: 26.2px;
+    font-weight: bold;
+    font-family: sans-serif ;
+    color: #333;
+    margin: 10px 0 0 5px;
+}
 
-}
-.double{
+
+.double {
     margin-top: 100px;
 }
-.plus{
-    position: relative;
+/* General layout for filter and search section */
+.filter-search-section {
+    display: flex; /* Arrange filter and search side-by-side */
+    justify-content: flex-start; /* Align items to the start */
+    align-items: center; /* Vertically align items */
+    gap: 30px; /* Space between filter and search containers */
+    margin: 0px 100px; /* Adjust margin to match header padding-inline-start/end */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Filter by Category Dropdown Styling */
+.filter-container {
+    position: absolute; /* For positioning the custom arrow if needed */
+    display: inline-block; /* Allows width to fit content */
+    border: 1px solid #ccc; /* Border around the dropdown */
+    border-radius: 5px; /* Slightly rounded corners */
+    background-color: #004b69; /* White background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+    width:250px;
+    
+}
+.filter-container{
+   position: absolute; 
+   left: 116px;
+    top: 306px;
+}
+.sr-only{
+    text-decoration-color: rgb(5, 107, 196);
+}
+.filter-dropdown {
+    /* Reset default select styles */
+    -webkit-appearance: none; /* Remove default arrow on Webkit browsers */
+    -moz-appearance: none;    /* Remove default arrow on Firefox */
+    appearance: none;         /* Remove default arrow */
+    background-color: transparent; /* Make background transparent to show parent background */
+    border: none; /* Remove default border */
+    padding: 10px 30px 10px 15px; /* Padding for text, space for custom arrow */
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    outline: none; /* Remove outline on focus */
+    width: 200px; /* Adjust width as needed based on image */
+    color: #f9f5f5;
+}
+
+/* Style for the custom dropdown arrow (if you use a Font Awesome icon) */
+/* This positions the icon over the default browser arrow, if it can't be removed */
+.dropdown-arrow {
+    position: absolute;
+    right: 10px; /* Position from the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    pointer-events: none; /* Make icon unclickable so clicks go to select */
+    color: #fcf9f9; /* Color of the arrow */
+}
+
+/* Hide the default arrow in some browsers for a cleaner look */
+select::-ms-expand {
+    display: none; /* Hide default arrow in IE/Edge */
+}
+
+
+/* Search Bar Styling */
+.search-container {
+    display: flex; /* Arrange input and button side-by-side */
+    border: 1px solid #ccc; /* Border around the search bar */
+    border-radius: 25px; /* Rounded corners */
+    background-color: white;
+    overflow: hidden; /* Ensures no content spills out of border-radius */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+    width: 620px; /* Adjust width as needed */
+}
+.search-container{
+    position: absolute; 
+   left: 563px;
+    top: 309px;
+    
+}
+
+.search-input {
+    flex-grow: 1; /* Allow input to take up available space */
+    border: none; /* Remove input's default border */
+    padding: 10px 15px;
+    font-size: 16px;
+    outline: none; /* Remove outline on focus */
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #999; /* Placeholder text color */
+}
+
+.search-button {
+    background-color: transparent; /* No background color */
+    border: none; /* Remove button's default border */
+    padding: 10px 15px;
+    cursor: pointer;
+    outline: none;
+    display: flex; /* To center the icon if it's there */
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button i {
+    color: #555; /* Color for the magnifying glass icon */
+    font-size: 18px; /* Size of the icon */
+}
+
+.search-button:hover i {
+    color: #007bff; 
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; 
+    border-width: 0;
+}
+
+.plus {
+    position: absolute;
     left: 86%;
-    top: -10%;
+    top: 84%;
 }
-h3{
-    margin-left:10px;
-}
-.Armsofa-1{
-  border: 1px solid grey;
+.plus {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 17.6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.Armsofa-1{
+.plus:hover {
+    color: rgb(7, 4, 194);
+    background-color: rgb(217, 217, 226);
+}
+
+h3 {
+    margin-left: 10px;
+}
+
+.Armsofa-1 {
+    border: 1px solid grey;
     box-shadow: 3px 3px 2px grey;
 }
-.Armsofa-1 img{
-    width:300px;
+
+.Armsofa-1 img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
-span{
+
+span {
     color: gold;
     margin-left: 10px;
 }
-p{
+
+p {
     margin-left: 10px;
 }
 
-/* footer section starts*/
-footer{ 
-    display:grid;
-    grid-template-columns:15% 75%;
-    background-color: rgb(18 51 108);
-    padding-left: 10%;
-    padding-top: 50px;
-    padding-bottom: 100px; 
-    
+.Armsofa-2 {
+    border: 1px solid #eee;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: left;
 }
-h2{
-    color:white;
-}
-.titles{
+.container-3 {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    margin-inline-start:50px;
-    align-items: center;
-    text-align: start; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 0 150px;
+    padding-bottom: 30px;
+}
+.Armsofa-1 {
+    border: 1px solid #eee;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: left;
+    position: relative;
+}
+.Armsofa-1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+.Armsofa-2 img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+.Armsofa-1{
+    position: relative;
+
+}
+ .Armsofa-2{
+    position: relative;
+    left: 165px;
+
 }
 
-footer div ul li a{
+
+
+.fav-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #ffffff;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(237, 238, 240, 0.89);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.fav-icon i {
+    color: #181717;
+    font-size: 16px;
+    pointer-events: none; 
+    border:5px;
+}
+.Armsofa-1:hover .fav-icon,
+.Armsofa-2:hover .fav-icon {
+    opacity: 1;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 20% 75%;
+    background-color: rgb(18, 51, 108);
+    padding-left: 8%;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+h2 {
+    color: white;
+}
+
+.titles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-inline-start: 50px;
+    align-items: flex-start;
+    text-align: start;
+    justify-content: center;
+}
+
+footer div ul li a {
     list-style: none;
     text-decoration: none;
 }
-ul li{
-    color:rgb(182, 181, 181);
-    font-family: 'Times New Roman', Times, serif;
-}
-.para{
-   color:rgb(182, 181, 181) ;
-   font-family: 'Times New Roman', Times, serif;
+
+ul li {
+    color: rgb(182, 181, 181);
+    margin-bottom: 15px;
+    margin-left: 40px;
 }
 
-.sub-titles{
-    margin-inline-start: 40px;
+.para {
+    color: rgb(182, 181, 181);
 }
-.titles .Contact, .Contact{
-    margin-top: 25px;
+
+.sub-titles {
+    margin-inline-start: 38px;
+    margin-bottom: 15px;
+}
+.Mart p{
+    margin-left: 0px;
+    margin-top: 18px;
+}
+.Contact p{
+    margin-left: 40px;
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 1199px) {
+    header {
+        padding-inline-start: 50px;
+    }
+
+    nav ul {
+        padding-inline-end: 50px;
+        gap: 20px;
+    }
+
+    .container-3 {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .Armsofa-2 {
+        left: 132px;
+        top: 0;
+        width: 300px;
+        height: auto;
+    }
+
+    footer {
+        padding-left: 5%;
+    }
+
+    .titles {
+        margin-inline-start: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        padding-inline-start: 20px;
+        padding-inline-end: 20px;
+        padding-bottom: 10px;
+    }
+
+    nav ul {
+        padding-inline-end: 0;
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .container h2 {
+        font-size:24px;
+    }
+
+    .container-3 {
+        grid-template-columns: 1fr;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .Armsofa-1,
+    .Armsofa-2 {
+        width: auto;
+    }
+
+    .Armsofa-1 img,
+    .Armsofa-2 img {
+        width: 100%;
+    }
+
+    .plus {
+        left: 91%;
+        top: 91%;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+
+    .Contact {
+        margin-bottom: 30px;
+    }
+
+    .titles {
+        grid-template-columns: 1fr;
+        margin-inline-start: 0;
+        text-align: center;
+    }
+
+    .sub-titles {
+        margin-inline-start: 0;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    footer div ul {
+        padding: 0;
+    }
+
+    footer div ul li {
+        list-style-type: none;
+    }
+}
+
+@media (max-width: 479px) {
+    header {
+        padding-inline-start: 10px;
+        padding-inline-end: 10px;
+    }
+
+    header img {
+        max-width: 120px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 14.4px;
+    }
+
+    .container h2 {
+        font-size: 19.2;
+        top: 35%;
+    }
+
+    .container-3 {
+        margin-left: 10px;
+        margin-right: 10px;
+        grid-gap: 15px;
+    }
+
+    .plus {
+        left: 88%;
+        top: 90%;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14.4px;
+    }
+
+    footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .titles {
+        font-size: 14.4px;
+    }
+
+    .para {
+        font-size: 13.6;
+    }
 }
