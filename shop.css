@@ -13,10 +13,18 @@ header {
     background-color: white;
     position: relative;
 }
+header{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    opacity: 1;
+    z-index: 3;
+}
+
 
 nav ul {
     display: flex;
-    padding-inline-end: 100px;
+    padding-inline-end: 206px;
     gap: 30px;
     list-style: none;
     text-decoration: none;
@@ -26,13 +34,23 @@ nav ul {
 header nav ul li a {
     text-decoration: none;
     color: black;
+    font-family: sans-serif;
+    font-weight: bold;
 }
+ul li {
+    color: rgb(182, 181, 181);
+    margin-bottom: 15px;
+    margin-left: 5px;
+}
+
 header nav ul li a:hover {
     color: rgb(56, 143, 243);
 }
 header nav i:hover {
     color: rgb(2, 103, 255);
 }
+
+
 
 .banner {
     width: 100%;
@@ -102,7 +120,7 @@ header nav i:hover {
 .filter-container{
    position: absolute; 
    left: 116px;
-    top: 306px;
+    top: 225px;
 }
 .sr-only{
     text-decoration-color: rgb(5, 107, 196);
@@ -151,7 +169,7 @@ select::-ms-expand {
 .search-container{
     position: absolute; 
    left: 563px;
-    top: 309px;
+    top: 227px;
     
 }
 
@@ -341,18 +359,13 @@ footer div ul li a {
     text-decoration: none;
 }
 
-ul li {
-    color: rgb(182, 181, 181);
-    margin-bottom: 15px;
-    margin-left: 40px;
-}
 
 .para {
     color: rgb(182, 181, 181);
 }
 
 .sub-titles {
-    margin-inline-start: 38px;
+    margin-inline-start: 8px;
     margin-bottom: 15px;
 }
 .Mart p{
@@ -365,27 +378,28 @@ ul li {
 }
 
 
-@media (max-width: 1199px) {
+@media (max-width: 1024px) {
     header {
-        padding-inline-start: 50px;
+        padding: 10px 50px;
     }
 
     nav ul {
-        padding-inline-end: 50px;
         gap: 20px;
     }
 
-    .container-3 {
-        grid-template-columns: repeat(2, 1fr);
-        margin-left: 100px;
-        margin-right: 100px;
+    cards {
+        margin-top: 100px;
+        margin-inline: 20px;
+        gap: 15px;
     }
 
-    .Armsofa-2 {
-        left: 132px;
-        top: 0;
-        width: 300px;
-        height: auto;
+    .car, .pay, .shield, .headphones {
+        padding: 40px 15px;
+    }
+
+    .container-1, .container-2, .container-3 {
+        margin: 0 20px;
+        gap: 20px;
     }
 
     footer {
@@ -395,46 +409,72 @@ ul li {
     .titles {
         margin-inline-start: 20px;
     }
+    .contact h2{
+        color:white;
+    }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding-inline-start: 20px;
-        padding-inline-end: 20px;
-        padding-bottom: 10px;
+        padding: 10px 20px;
+    }
+
+    header img {
+        margin-bottom: 15px;
+    }
+
+    nav {
+        width: 100%;
+        text-align: center;
     }
 
     nav ul {
-        padding-inline-end: 0;
         justify-content: center;
-        width: 100%;
+        flex-wrap: wrap;
         gap: 15px;
     }
 
-    .container h2 {
-        font-size:24px;
+    header nav i {
+        margin: 0 5px;
     }
 
-    .container-3 {
+    cards {
         grid-template-columns: 1fr;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-top: 50px;
+        margin-inline: 15px;
     }
 
-    .Armsofa-1,
-    .Armsofa-2 {
-        width: auto;
+    .car, .pay, .shield, .headphones {
+        padding: 30px 15px;
     }
 
-    .Armsofa-1 img,
-    .Armsofa-2 img {
-        width: 100%;
+    .container-1, .container-2, .container-3 {
+        grid-template-columns: 1fr;
+        margin: 0 15px;
+        gap: 15px;
     }
 
-    .plus {
-        left: 91%;
-        top: 91%;
+    .sofa-1, .phone-1, .Armsofa-1, .phone-2, .Armsofa-2 {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .sofa-1 h3, .phone-1 h3, .Armsofa-1 h3 {
+        font-size: 16px;
+    }
+
+    .sofa-1 p, .phone-1 p, .Armsofa-1 p {
+        font-size: 17.6px;
+    }
+
+    .plus, .plus-1 {
+        position: static;
+        margin-top: 15px;
+        display: inline-block;
+        left: auto;
+        right: auto;
+        bottom: auto;
     }
 
     footer {
@@ -447,6 +487,7 @@ ul li {
 
     .Contact {
         margin-bottom: 30px;
+        color: white;
     }
 
     .titles {
@@ -469,45 +510,50 @@ ul li {
         list-style-type: none;
     }
 }
-
-@media (max-width: 479px) {
+@media (max-width: 480px) {
     header {
-        padding-inline-start: 10px;
-        padding-inline-end: 10px;
-    }
-
-    header img {
-        max-width: 120px;
+        padding: 10px;
     }
 
     nav ul {
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 10px;
-        font-size: 14.4px;
+        margin-top: 10px;
     }
 
-    .container h2 {
-        font-size: 19.2;
-        top: 35%;
-    }
-
-    .container-3 {
-        margin-left: 10px;
-        margin-right: 10px;
-        grid-gap: 15px;
-    }
-
-    .plus {
-        left: 88%;
-        top: 90%;
-    }
-
-    h3 {
+    header nav i {
         font-size: 16px;
     }
 
-    p {
-        font-size: 14.4px;
+    cards {
+        margin-inline: 10px;
+        gap: 10px;
+    }
+
+    .car, .pay, .shield, .headphones {
+        padding: 25px 10px;
+    }
+
+    .car h2, .pay h2, .shield h2, .headphones h2 {
+        font-size: 17.6px;
+    }
+
+    .car i, .pay i, .shield i, .headphones i {
+        font-size: 24px;
+        padding: 12px;
+    }
+
+    .container-1, .container-2, .container-3 {
+        margin: 0 10px;
+        gap: 10px;
+    }
+
+    .sofa-1 h3, .phone-1 h3, .Armsofa-1 h3 {
+        font-size: 15.2px;
+    }
+
+    .sofa-1 p, .phone-1 p, .Armsofa-1 p {
+        font-size: 16px;
     }
 
     footer {
@@ -520,6 +566,6 @@ ul li {
     }
 
     .para {
-        font-size: 13.6;
-    }
+        font-size:13.6;
+}
 }
